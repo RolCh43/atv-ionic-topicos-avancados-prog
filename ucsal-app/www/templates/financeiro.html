@@ -1,0 +1,45 @@
+<ion-view view-title="Financeiro">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">Semestre letivo</div>
+        <select ng-model="selecao.semestre" ng-change="trocarSemestre()"
+                ng-options="s as s for s in semestres"></select>
+      </label>
+    </div>
+
+    <div class="resumo">
+      Total em aberto no semestre: <strong>{{ totalAPagar | currency:'R$ ' }}</strong>
+    </div>
+
+    <div class="list">
+      <div class="item item-text-wrap parcela" ng-repeat="m in mensalidades">
+        <div class="row">
+          <div class="col">
+            <div class="mes">{{ m.mes }}</div>
+            <small>Vencimento: {{ m.vencimento | date:'dd/MM/yyyy' }}</small>
+          </div>
+          <div class="col text-right">
+            <div class="valor">{{ m.valor | currency:'R$ ' }}</div>
+            <span class="badge-status"
+                  ng-class="{ 'badge-paga': m.status === 'Paga', 'badge-apagar': m.status === 'A Pagar' }">
+              {{ m.status }}
+            </span>
+          </div>
+        </div>
+
+        <div ng-if="m.status === 'A Pagar'" style="margin-top:8px">
+          <small>{{ m.codigoBarras }}</small><br>
+          <button class="button button-small button-ucsal-claro" ng-click="copiarCodigo(m)">
+            <i class="icon ion-clipboard"></i> Copiar Código de Barras
+          </button>
+          <span class="copiado-ok" ng-show="copiadoMes === m.mes">
+            <i class="icon ion-checkmark-circled"></i> Copiado!
+          </span>
+        </div>
+      </div>
+
+      <div class="item" ng-if="mensalidades.length === 0">Nenhuma mensalidade encontrada.</div>
+    </div>
+  </ion-content>
+</ion-view>

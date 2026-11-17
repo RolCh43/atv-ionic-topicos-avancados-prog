@@ -1,0 +1,78 @@
+/* ===== Identidade visual UCSal (variaveis CSS) ===== */
+:root {
+  --ucsal-azul-marinho: #0b2a5b;
+  --ucsal-azul-claro:   #4aa3df;
+  --ucsal-branco:       #ffffff;
+  --ucsal-cinza:        #f2f5fa;
+  --ucsal-verde:        #2e9e5b;
+  --ucsal-laranja:      #f0a020;
+}
+
+.bar-ucsal {
+  background-color: var(--ucsal-azul-marinho);
+  border-color: var(--ucsal-azul-marinho);
+  color: var(--ucsal-branco);
+}
+.bar-ucsal .title, .bar-ucsal .button { color: var(--ucsal-branco); }
+
+.button-ucsal {
+  background-color: var(--ucsal-azul-marinho);
+  border-color: var(--ucsal-azul-marinho);
+  color: var(--ucsal-branco);
+}
+.button-ucsal.activated { background-color: #081d40; }
+.button-ucsal-claro {
+  background-color: var(--ucsal-azul-claro);
+  border-color: var(--ucsal-azul-claro);
+  color: var(--ucsal-branco);
+}
+.button-ucsal-claro.activated { background-color: #3589bd; }
+
+.scroll-content, .view { background-color: var(--ucsal-cinza); }
+
+/* Menu lateral */
+.menu-ucsal { background-color: var(--ucsal-azul-marinho); }
+.menu-ucsal .bar { background-color: #081d40; border-color: #081d40; }
+.menu-ucsal .item {
+  background-color: var(--ucsal-azul-marinho);
+  color: var(--ucsal-branco);
+  border-color: rgba(255,255,255,.12);
+}
+.menu-ucsal .item i { color: var(--ucsal-azul-claro); }
+.menu-ucsal .menu-aluno { padding: 16px; color: var(--ucsal-branco); }
+.menu-ucsal .menu-aluno small { color: var(--ucsal-azul-claro); }
+
+/* Login */
+.login-page { background: linear-gradient(var(--ucsal-azul-marinho), var(--ucsal-azul-claro)); }
+.login-box { margin-top: 12%; text-align: center; color: var(--ucsal-branco); }
+.login-box h2 { color: var(--ucsal-branco); margin-bottom: 4px; }
+.login-box p  { color: #dbe9f7; margin-bottom: 24px; }
+.login-form .item { border-radius: 6px; margin-bottom: 10px; }
+.msg-erro { color: #c0392b; background: #fdecea; padding: 10px; border-radius: 6px; margin: 8px 0; }
+.msg-erro-login { text-align: left; }
+
+/* Cards de noticias */
+.card .card-titulo { color: var(--ucsal-azul-marinho); font-weight: bold; }
+.card img.imagem-card { width: 100%; display: block; }
+.badge-categoria {
+  display: inline-block; padding: 2px 10px; border-radius: 12px;
+  font-size: 12px; color: var(--ucsal-branco); margin-right: 8px;
+}
+.cat-noticia { background-color: var(--ucsal-azul-marinho); }
+.cat-evento  { background-color: var(--ucsal-azul-claro); }
+.data-card { color: #777; font-size: 13px; }
+
+/* Financeiro */
+.badge-status { padding: 3px 10px; border-radius: 12px; font-size: 12px; color: var(--ucsal-branco); font-weight: bold; }
+.badge-paga   { background-color: var(--ucsal-verde); }
+.badge-apagar { background-color: var(--ucsal-laranja); }
+.parcela .mes { font-weight: bold; color: var(--ucsal-azul-marinho); }
+.parcela .valor { font-size: 18px; }
+.copiado-ok { color: var(--ucsal-verde); font-weight: bold; margin-left: 8px; }
+.resumo { background: var(--ucsal-azul-marinho); color: var(--ucsal-branco); padding: 12px 16px; border-radius: 6px; margin: 10px; }
+.resumo strong { color: var(--ucsal-azul-claro); }
+
+/* Detalhe / Perfil */
+.conteudo-detalhe { padding: 16px; background: var(--ucsal-branco); }
+.conteudo-detalhe h2 { color: var(--ucsal-azul-marinho); }
+.secao-titulo { color: var(--ucsal-azul-marinho); padding: 12px 16px 0; font-weight: bold; }

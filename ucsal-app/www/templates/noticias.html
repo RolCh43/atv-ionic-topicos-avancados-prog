@@ -1,0 +1,31 @@
+<ion-view view-title="Mural UCSal">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">Categoria</div>
+        <select ng-model="filtro.categoria">
+          <option value="">Todas</option>
+          <option ng-repeat="c in categorias" value="{{ c }}">{{ c }}</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="card" ng-repeat="p in publicacoes | filter:{ categoria: filtro.categoria }">
+      <div class="item item-divider">
+        <span class="badge-categoria"
+              ng-class="{ 'cat-noticia': p.categoria === 'Notícia', 'cat-evento': p.categoria === 'Evento' }">
+          {{ p.categoria }}
+        </span>
+        <span class="data-card">{{ p.data | date:'dd/MM/yyyy' }}</span>
+      </div>
+      <img class="imagem-card" ng-src="{{ p.imagem }}" alt="{{ p.titulo }}">
+      <div class="item item-text-wrap">
+        <p class="card-titulo">{{ p.titulo }}</p>
+        <p>{{ p.resumo }}</p>
+      </div>
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" ng-click="lerMais(p)"><i class="icon ion-document-text"></i> Ler mais</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

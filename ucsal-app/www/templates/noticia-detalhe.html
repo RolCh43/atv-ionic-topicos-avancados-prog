@@ -1,0 +1,15 @@
+<ion-view view-title="{{ publicacao.categoria }}">
+  <ion-content>
+    <img class="imagem-card" style="width:100%" ng-src="{{ publicacao.imagem }}" ng-if="publicacao">
+    <div class="conteudo-detalhe" ng-if="publicacao">
+      <span class="badge-categoria"
+            ng-class="{ 'cat-noticia': publicacao.categoria === 'Notícia', 'cat-evento': publicacao.categoria === 'Evento' }">
+        {{ publicacao.categoria }}
+      </span>
+      <span class="data-card">{{ publicacao.data | date:'dd/MM/yyyy' }}</span>
+      <h2>{{ publicacao.titulo }}</h2>
+      <p>{{ publicacao.conteudo }}</p>
+    </div>
+    <div class="msg-erro" ng-if="!publicacao">Publicação não encontrada.</div>
+  </ion-content>
+</ion-view>

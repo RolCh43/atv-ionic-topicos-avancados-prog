@@ -1,0 +1,26 @@
+<ion-view view-title="Login" hide-nav-bar="true">
+  <ion-content class="login-page" scroll="false">
+    <div class="login-box padding">
+      <i class="icon ion-university" style="font-size:64px"></i>
+      <h2>Portal do Aluno UCSal</h2>
+      <p>Universidade Católica do Salvador</p>
+
+      <form name="loginForm" class="login-form" ng-submit="entrar()" novalidate>
+        <label class="item item-input">
+          <input type="text" placeholder="Matrícula" ng-model="form.matricula">
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Senha" ng-model="form.senha">
+        </label>
+
+        <div class="msg-erro msg-erro-login" ng-if="erro">{{ erro }}</div>
+
+        <button type="submit" class="button button-block button-ucsal-claro"
+                ng-disabled="!form.matricula || !form.senha">
+          Entrar
+        </button>
+      </form>
+      <small>Teste: 20261001 / 123456</small>
+    </div>
+  </ion-content>
+</ion-view>
